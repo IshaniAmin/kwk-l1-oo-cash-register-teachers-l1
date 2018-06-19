@@ -88,12 +88,12 @@ describe 'AmazonTransaction' do
 
 
   # BONUS: uncomment out each test to work on this part
-  # describe '#cancel_order' do
-  #   it 'subtracts the last transaction from the total' do
-  #     amazon_transaction.add_item("tomato", 1.76)
-  #     expect{amazon_transaction.cancel_order}.to change{amazon_transaction.total}.by(-1.76)
-  #   end
-  # end
+  describe '#cancel_order' do
+    it 'subtracts the last transaction from the total' do
+      amazon_transaction.add_item("tomato", 1.76)
+      expect{amazon_transaction.cancel_order}.to change{amazon_transaction.total}.by(-1.76)
+    end
+  end
 
   #Completing this test requires knowledge of class variables, class methods and self.
   # describe '.transaction_codes' do
@@ -101,7 +101,7 @@ describe 'AmazonTransaction' do
   #       expect(amazon_transaction.transaction_code).to be > 100000
   #       expect(amazon_transaction.transaction_code).to be < 999999
   #    end
-
+  #
   # it 'at the creation of a new transaction it saves each transaction\'s code to a class variable called transaction_codes' do
   #    expect(AmazonTransaction.transaction_codes.length).to eq(16)
   #  end
